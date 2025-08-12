@@ -36,12 +36,12 @@ section {
 }
 .project {
     margin-bottom: 2rem;
-    border-left: 3px solid #007acc;
+    border-left: 3px solid var(--gold); 
     padding-left: 1rem;
     transition: background-color 0.3s ease;
 }
 .project:hover {
-    background-color: #f0f8ff;
+    background-color: #f9f6ea;  
 }
 footer {
     background-color: #f4f4f4;
