@@ -54,6 +54,9 @@ section {
 .project:hover {
   background-color: #f9f6ea; /* subtle warm highlight on hover */
 }
+.project p {
+  color: #222;
+}
 footer {
   background-color: #f4f4f4;
   text-align: center;
