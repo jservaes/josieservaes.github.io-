@@ -46,15 +46,14 @@ section {
 
 .project {
   margin-bottom: 2rem;
-  border-left: 3px solid var(--gold-medium);
+  border-left: 3px solid var(--gold-medium); /* gold sidebar */
   padding-left: 1rem;
   transition: background-color 0.3s ease;
 }
 
 .project:hover {
-  background-color: #f9f6ea; /* very light warm gold tint */
+  background-color: #f9f6ea; /* subtle warm highlight on hover */
 }
-
 footer {
   background-color: #f4f4f4;
   text-align: center;
