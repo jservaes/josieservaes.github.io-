@@ -46,7 +46,7 @@ section {
 
 .project {
   margin-bottom: 2rem;
-  border-left: 3px solid #000 !important; /* black sidebar */
+  border-left: 3px solid var(--gold-medium);
   padding-left: 1rem;
   transition: background-color 0.3s ease;
 }
