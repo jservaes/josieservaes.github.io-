@@ -20,11 +20,11 @@ header h1 {
 nav a {
     margin-left: 1rem;
     text-decoration: none;
-    color: #333;
+    color: var(--gold);       /* change from #333 */
     transition: color 0.3s ease;
 }
 nav a:hover {
-    color: #007acc;
+    color: #d1bb7a;           /* match the gold hover */
 }
 main {
     padding: 2rem;
@@ -46,3 +46,43 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+/* Define gold accent color */
+:root {
+  --gold: #bfa46f;
+}
+
+/* Links with gold accent */
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #d1bb7a;
+  text-decoration: underline;
+}
+
+/* Download Resume button */
+.btn-resume {
+  background-color: var(--gold);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  box-shadow: 0 4px 8px rgba(191, 164, 111, 0.3);
+  border: 2px solid var(--gold);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Hover effect for button */
+.btn-resume:hover {
+  background-color: #d1bb7a;
+  box-shadow: 0 0 12px 3px rgba(191, 164, 111, 0.7);
+}
+
