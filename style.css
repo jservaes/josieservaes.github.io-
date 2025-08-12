@@ -114,3 +114,10 @@ a:hover {
     box-sizing: border-box;
   }
 }
+@media (max-width: 600px) {
+  :root {
+    --gold-light: #d6c88f;    /* softer light gold */
+    --gold-medium: #b3a060;   /* muted medium gold */
+    --gold-dark: #8e7a43;     /* deep warm gold */
+  }
+}
