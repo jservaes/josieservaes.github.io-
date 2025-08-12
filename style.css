@@ -97,4 +97,20 @@ a:hover {
   box-shadow: 0 0 25px 8px rgba(166, 139, 74, 0.8);
   transform: scale(1.07);
 }
-
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* space between links */
+    padding: 1rem 0;
+  }
+  nav a {
+    margin-left: 0; /* remove horizontal margin */
+    font-size: 1.2rem; /* slightly larger for tap targets */
+    padding: 0.5rem 1rem;
+    width: 100%; /* full width for easier tapping */
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
