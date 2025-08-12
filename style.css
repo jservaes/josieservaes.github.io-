@@ -1,5 +1,7 @@
 :root {
-  --gold: #bfa46f;
+  --gold-light: #FFE135;    /* lighter gold for hover */
+  --gold-medium: #FFD700;   /* classic rich gold */
+  --gold-dark: #B8860B;     /* warm dark goldenrod */
 }
 
 body {
@@ -26,12 +28,12 @@ header h1 {
 nav a {
   margin-left: 1rem;
   text-decoration: none;
-  color: var(--gold);
+  color: var(--gold-medium);
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #d1bb7a;
+  color: var(--gold-light);
 }
 
 main {
@@ -44,7 +46,7 @@ section {
 
 .project {
   margin-bottom: 2rem;
-  border-left: 3px solid #000 !important; /* black sidebar, forced */
+  border-left: 3px solid #000 !important; /* black sidebar */
   padding-left: 1rem;
   transition: background-color 0.3s ease;
 }
@@ -61,35 +63,38 @@ footer {
 
 /* General links with gold accent */
 a {
-  color: var(--gold);
+  color: var(--gold-medium);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #d1bb7a;
+  color: var(--gold-light);
   text-decoration: underline;
 }
 
 /* Download Resume button */
 .btn-resume {
-  background-color: var(--gold);
+  background: linear-gradient(135deg, var(--gold-medium), var(--gold-dark));
   color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  box-shadow: 0 4px 8px rgba(191, 164, 111, 0.3);
-  border: 2px solid var(--gold);
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  letter-spacing: 1.4px;
+  box-shadow: 0 6px 15px rgba(184, 134, 11, 0.5);
+  border: 2px solid var(--gold-dark);
   cursor: pointer;
+  transition: all 0.3s ease;
   display: inline-block;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn-resume:hover {
-  background-color: #d1bb7a;
-  box-shadow: 0 0 12px 3px rgba(191, 164, 111, 0.7);
+  background: linear-gradient(135deg, var(--gold-light), #D4AF37);
+  box-shadow: 0 0 25px 8px rgba(212, 175, 55, 0.8);
+  transform: scale(1.07);
 }
 
