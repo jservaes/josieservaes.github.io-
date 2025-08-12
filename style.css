@@ -91,6 +91,44 @@ a:hover {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#experience {
+  margin-bottom: 3rem;
+}
+
+.experience-item {
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--gold-medium);
+  padding-left: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.experience-item:hover {
+  background-color: #f9f6ea; /* subtle warm highlight on hover */
+}
+
+#experience h2 {
+  margin-bottom: 1rem;
+}
+
+.experience-item h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.experience-item p {
+  margin: 0.3rem 0 0.8rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+.experience-item ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  color: #333;
+}
+
 
 .btn-resume:hover {
   background: linear-gradient(135deg, var(--gold-light), var(--gold-medium));
