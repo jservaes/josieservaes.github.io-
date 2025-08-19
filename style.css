@@ -54,9 +54,11 @@ section {
 .project:hover {
   background-color: #f9f6ea; /* subtle warm highlight on hover */
 }
+
 .project p {
   color: #222;
 }
+
 footer {
   background-color: #f4f4f4;
   text-align: center;
@@ -93,6 +95,14 @@ a:hover {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.btn-resume:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-medium));
+  box-shadow: 0 0 25px 8px rgba(166, 139, 74, 0.8);
+  transform: scale(1.07);
+}
+
+/* Experience section */
 #experience {
   margin-bottom: 3rem;
 }
@@ -131,12 +141,55 @@ a:hover {
   color: #333;
 }
 
-
-.btn-resume:hover {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold-medium));
-  box-shadow: 0 0 25px 8px rgba(166, 139, 74, 0.8);
-  transform: scale(1.07);
+/* About section */
+.about-section {
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
 }
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--gold-medium);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: var(--gold-medium);
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
   nav {
     display: flex;
@@ -145,6 +198,7 @@ a:hover {
     gap: 1rem; /* space between links */
     padding: 1rem 0;
   }
+
   nav a {
     margin-left: 0; /* remove horizontal margin */
     font-size: 1.2rem; /* slightly larger for tap targets */
@@ -153,7 +207,18 @@ a:hover {
     text-align: center;
     box-sizing: border-box;
   }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
 }
+
+/* Alternate gold tones for very small screens */
 @media (max-width: 600px) {
   :root {
     --gold-light: #d6c88f;    /* softer light gold */
