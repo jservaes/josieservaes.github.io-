@@ -1,78 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Josephine Servaes</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Josie Servaes — Software Development</title>
+
+  <!-- Meta -->
+  <meta name="theme-color" content="#a68b4a" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Josie Servaes</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <section id="about" class="about-section">
-          <div class="about-container">
-            <div class="about-image">
-              <img src="IMG_1719 2.jpg" alt="Josie Servaes portrait">
-            </div>
-            <div class="about-text">
-              <h2>About Me</h2>
-              <p>
-                Hi! I’m Josie, a software developer passionate about building clean, efficient, and user-friendly
-                solutions! I'm currently heading into my junior year at the University of Massachusetts Amherst's Computer Science school!
-                I love creating tools that make people’s work simpler and more enjoyable.
-              </p>
-              <p>
-                When I’m not coding, you’ll probably find me travelling, staying active, or scrolling through Pinterest! Thanks for visiting my site!
-              </p>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">Josie Servaes</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#case-study">Payroll Case Study</a>
+        <a class="btn btn--small" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <p class="kicker">Streamlining tools</p>
+        <h1>I enjoy building programs that make peoples lives easier!</h1>
+        <p class="lead">
+          Python + simple UIs for real business workflows: payroll, data cleanup, form automation, and review pipelines.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#case-study">View Payroll Case Study</a>
+          <a class="btn btn--ghost" href="#projects">See Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p>
+          I’m Josie, a software developer (UMass Amherst, CS) focused on building clean, reliable internal automations.
+          I like turning messy, manual processes into one-click runs with clear logs and easy handoff. 
+          Right now, I’m deepening my understanding of database fundamentals and working to master web analytics and scraping.
+       </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Payroll Automation</h3>
+            <p>
+              Python tool that pulls timesheets via API, applies pay rules (OT/holidays/rates), and exports payroll-ready reports.
+              Added a one-click GUI so anyone can run it. 
+            </p>
+            <p class="meta"><strong>Tech:</strong> Python, REST APIs, Excel</p>
+            <a class="card-cta" href="#case-study" aria-label="Read the payroll automation case study">Read case study →</a>
+          </article>
+
+          <article class="card">
+            <h3>Database Cleaner</h3>
+            <p>
+              Audited & mapped Salesforce data, removed redundancy, and aligned structures to support Conga form automation.
+              Outcome: more reliable document generation and simpler future data entry.
+            </p>
+            <p class="meta"><strong>Tech:</strong> Salesforce, Excel, Conga</p>
+          </article>
+
+          <article class="card">
+            <h3>Automating Quality Control</h3>
+            <p>
+              Scraped public reviews and internal docs, normalized into review categories for a QC queue.
+              Enabled faster triage and trend tracking.
+            </p>
+            <p class="meta"><strong>Tech:</strong> Python, Requests/BS4, Pandas</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDY (SAFE) -->
+    <section id="case-study" class="case-study">
+      <div class="container">
+        <h2 class="section-title">Payroll Automation — Case Study (Safe Demo)</h2>
+
+        <div class="cs-grid">
+          <div class="cs-text">
+            <h3>Problem</h3>
+            <p>
+              Payroll prep involved manual copy/paste from time tracking, rate lookups, and special-case rules. It was slow and error-prone.
+            </p>
+
+            <h3>Solution</h3>
+            <ul>
+              <li>Pull timesheets from a time-tracking API.</li>
+              <li>Apply rules for OT/holidays/differential rates.</li>
+              <li>Export payroll-ready CSV/Excel with audit log.</li>
+              <li>One-click GUI for non-technical users.</li>
+            </ul>
+
+            <h3>Results</h3>
+            <ul>
+              <li>~80–90% time saved per run.</li>
+              <li>Fewer corrections; repeatable & auditable.</li>
+            </ul>
+
+            <h3>Tech</h3>
+            <p>Python, Flask, Pandas, REST APIs, CSV/Excel.</p>
+
+            <div class="cta">
+              <!-- These are placeholders. Replace with your files when ready. -->
+              <a class="btn" href="#" aria-disabled="true">2-min Demo (synthetic data)</a>
+              <a class="btn btn--ghost" href="#" aria-disabled="true">Download Sample CSV</a>
             </div>
           </div>
-        </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Payroll Automation</h3>
-                <p>A Python-based software I developed for ClearRock to streamline the payroll process. It pulls time entries from QuickBooks Time via API, matches them with employee pay rates, and generates payroll-ready reports for each pay period. I also created a custom GUI to allow anyone in the company to run payroll with no technical knowledge, enhancing reporting accuracy and reducing manual effort..</p>
-                <p><strong>Tech Stack:</strong> Python, Flask, REST APIs, Excel</p>
-            </div>
-            <div class="project">
-                <h3>Database Cleaner</h3>
-                <p>A data-cleaning and structuring project for Elder Resource Benefits Consulting. I audited and mapped their Salesforce databases, eliminating redundancy and reformatting data structures to align with form automation in Conga. This cleanup enabled more reliable form generation and simplified future data entry.</p>
-                <p><strong>Tech Stack:</strong> Salesforce, Excel, Conga</p>
-            </div>
-            <div class="project">
-                <h3>Automating Quality Control</h3>
-                <p>
-                    A Python-based software I developed for a client company to streamline their quality control process. 
-                    The tool scrapes customer reviews from multiple websites and internal documents, 
-                    then processes the data into structured categorical fields for the company’s quality control team to review.
-                </p>
-            </div>
-        </section>
+          <!-- Redacted / synthetic visuals (placeholders) -->
+          <div class="cs-visuals">
+            <figure class="placeholder">
+              <div class="placeholder__label">Redacted Screenshot</div>
+              <figcaption>Import timesheets → validate → apply rules → export</figcaption>
+            </figure>
+            <figure class="placeholder">
+              <div class="placeholder__label">Architecture Diagram</div>
+              <figcaption>API → ETL → Rules Engine → GUI → CSV</figcaption>
+            </figure>
+          </div>
+        </div>
 
-        <section id="resume">
-          <h2>Resume</h2>
-          <a href="resume_2025.docx.pdf" download class="btn-resume">Download Resume</a>
-        </section>
+        <p class="disclaimer">
+          This page uses <em>synthetic data</em> and redacted visuals. No client names, no real employees, no sensitive fields.
+        </p>
+      </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <ul>
-                <li>Email: <a href="mailto:jservaes@umass.edu">jservaes@umass.edu</a></li>
-                <li><a href="https://www.linkedin.com/in/josephine-servaes-71317829b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            </ul>
-        </section>
-    </main>
+    <!-- RESUME -->
+    <section id="resume" class="resume">
+      <div class="container">
+        <h2 class="section-title">Resume</h2>
+        <a class="btn btn--wide" href="resume_2025.docx.pdf" download>Download Resume</a>
+      </div>
+    </section>
 
-    <footer>
-        <p>© 2025 Josie Servaes</p>
-    </footer>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:jservaes@umass.edu">jservaes@umass.edu</a></li>
+          <li><a href="https://www.linkedin.com/in/josephine-servaes-71317829b/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Josie Servaes</p>
+    </div>
+  </footer>
 </body>
 </html>
+
