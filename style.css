@@ -52,7 +52,8 @@ ul {
   padding: 72px 0;
 }
 
-.section-title {
+.section-title,
+.page-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 28px;
@@ -128,7 +129,6 @@ ul {
   min-height: 60vh;
 }
 
-/* white content on left */
 .hero-content {
   max-width: 560px;
   z-index: 2;
@@ -207,7 +207,7 @@ ul {
   transform: translateY(-1px);
 }
 
-/* wide variant (used on resume page) */
+/* wider button for resume download */
 .btn-wide {
   padding-inline: 2.4rem;
 }
@@ -283,7 +283,7 @@ ul {
 
 .resume-frame {
   width: 100%;
-  height: 88vh;
+  height: 88vh;          /* big viewer */
   border: none;
   border-radius: 14px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
