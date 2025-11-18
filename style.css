@@ -1,197 +1,275 @@
-:root {
-  --blue-light: #64b5f6;
-  --blue-medium: #1e88e5;
-  --blue-dark: #1565c0;
+/* -------------------------------- */
+/* BASIC RESET                      */
+/* -------------------------------- */
 
-  /* changed "gold" intention -> use a black accent */
-  --accent: #000;
-
-  --bg: #ffffff;
-  --fg: #111;
-  --muted: #555;
-  --card: #f0f7ff;
-  --line: #e3f2fd;
-  --shadow: 0 10px 24px rgba(30, 136, 229, 0.15);
-  --radius: 16px;
-}
-
-/* Base */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
+* {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.55;
-}
-a { color: var(--blue-dark); text-decoration: none; transition: color .2s ease; }
-a:hover { color: var(--blue-medium); text-decoration: underline; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-/* Accessibility */
-.skip-link {
-  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
-}
-.skip-link:focus {
-  left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px;
-  background: var(--blue-medium); color: #fff; border-radius: 8px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header */
-/* incorporate the top blue into the header so the "same blue on top" is visible */
-.site-header {
-  position: sticky; top: 0; z-index: 50;
-  background: linear-gradient(180deg, rgba(30,136,229,0.12), rgba(255,255,255,0.92));
-  backdrop-filter: saturate(180%) blur(8px);
-  border-bottom: 1px solid var(--line);
+html, body {
+  scroll-behavior: smooth;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #222;
+  background: #ffffff;
 }
-.nav {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 0;
-}
-.brand {
-  font-weight: 800; letter-spacing: .2px;
-  color: var(--accent); /* changed "gold" to black accent for brand */
-}
-.nav-links { display: flex; align-items: center; gap: 16px; }
-.nav-links a { font-weight: 600; }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 12px 18px;
-  border-radius: 12px;
+img { max-width: 100%; display: block; }
+
+ul { list-style: none; padding: 0; }
+
+
+/* -------------------------------- */
+/* GLOBAL LAYOUT                    */
+/* -------------------------------- */
+
+.container {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.2rem;
   font-weight: 700;
-  border: 2px solid var(--blue-dark);
-  background: linear-gradient(135deg, var(--blue-medium), var(--blue-dark));
-  color: #fff;
-  box-shadow: var(--shadow);
-  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+  margin-bottom: 25px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(30, 136, 229, 0.25); text-decoration: none; }
-.btn--ghost {
-  background: transparent; color: var(--blue-dark); border-color: var(--blue-medium);
-}
-.btn--small { padding: 8px 12px; border-radius: 10px; font-size: 0.95rem; }
-.btn--wide { min-width: 220px; text-align: center; }
 
-/* Hero Blob */
+
+/* -------------------------------- */
+/* SKIP LINK                        */
+/* -------------------------------- */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #1e88e5;
+  color: #fff;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+
+/* -------------------------------- */
+/* HEADER / NAV                     */
+/* -------------------------------- */
+
+.site-header {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #eee;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e88e5;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #1e88e5;
+}
+
+.btn--small {
+  padding: 6px 16px;
+  background: #1e88e5;
+  color: #fff !important;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+
+/* -------------------------------- */
+/* HERO SECTION                     */
+/* -------------------------------- */
+
 .hero-blob {
   position: relative;
-  width: 100%;
-  min-height: 520px; /* give a bit more vertical space so the name sits nicely inside the blob */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 60vh;
+  min-height: 350px;
   overflow: hidden;
 }
 
-/* Make sure the canvas stays behind content and does not capture pointer events */
 #blobCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  /* subtle blur so the blue blob feels soft behind the name */
-  filter: blur(0.6px);
+  display: block;
 }
 
 .hero-content {
-  position: absolute; /* fill the blob area so content is centered inside the blob */
+  position: absolute;
   inset: 0;
-  z-index: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 20px;
-  pointer-events: none; /* ensures clicks fall through if needed; set pointer-events:auto on interactive items inside */
+  pointer-events: none;
 }
 
-/* The name must be inside the blue blob, centered and large */
+.hero-content * {
+  pointer-events: auto;
+}
+
 .hero-name {
-  font-size: clamp(3.2rem, 9vw, 6rem); /* larger by default */
-  font-weight: 900;
-  color: #fff; /* white on blue blob for good contrast */
-  margin: 0;
-  letter-spacing: -1px;
-  line-height: 1;
-  padding: 20px 36px;
+  font-size: 3.3rem;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 22px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.hero-btn {
+  padding: 11px 30px;
   border-radius: 999px;
-  background: radial-gradient(ellipse at center, rgba(30,136,229,0.28), rgba(21,101,192,0.18) 50%, transparent 70%);
-  text-shadow: 0 6px 18px rgba(4, 25, 55, 0.35);
-  box-shadow: 0 8px 30px rgba(30,136,229,0.12);
-  display: inline-block;
-  pointer-events: auto;
-}
-
-/* If you want a smaller subheading inside the blob */
-.hero-sub {
-  margin-top: 8px;
-  color: rgba(255,255,255,0.9);
   font-weight: 600;
-  font-size: 1rem;
-  pointer-events: auto;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
 }
 
-/* Sections */
-section { padding: 48px 0; }
-.section-title { font-size: 1.6rem; margin: 0 0 18px; color: var(--blue-dark); }
+/* Primary Blue Button */
+.hero-btn.primary {
+  background: #1e88e5;
+  color: #fff;
+}
 
-/* Projects */
-.projects .grid {
+.hero-btn.primary:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+}
+
+/* Outline Button */
+.hero-btn.secondary {
+  background: transparent;
+  color: #1e88e5;
+  border: 2px solid #1e88e5;
+}
+
+.hero-btn.secondary:hover {
+  background: #e3f2fd;
+  transform: translateY(-2px);
+}
+
+
+/* -------------------------------- */
+/* GRID LAYOUT + CARDS              */
+/* -------------------------------- */
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 18px;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
+
 .card {
-  grid-column: span 12;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--blue-medium);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow);
-  transition: transform .12s ease, background .2s ease;
-}
-.card:hover { transform: translateY(-2px); }
-.card h3 { margin: 0 0 8px; }
-.card .meta { color: var(--muted); margin: 8px 0 0; }
-.card-cta { display: inline-block; margin-top: 10px; font-weight: 700; }
-
-/* Resume & Contact */
-.resume .btn { margin-top: 8px; }
-.contact .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-
-/* Footer */
-.site-footer { border-top: 1px solid var(--line); padding: 24px 0; text-align: center; background: #f9f9f9; }
-
-/* About clean-up */
-.about p { max-width: 70ch; }
-
-/* Responsive */
-@media (max-width: 900px) {
-  .projects .grid { grid-template-columns: repeat(6, 1fr); }
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
 }
 
-@media (max-width: 640px) {
-  .nav-links { gap: 10px; }
-  .btn--small { font-size: 0.9rem; padding: 7px 10px; }
-  .card { padding: 16px; }
-  .hero-name { font-size: clamp(2.2rem, 10vw, 3.2rem); padding: 14px 22px; }
+.card:hover {
+  transform: translateY(-4px);
 }
 
-@media (max-width: 600px) {
-  :root {
-    --blue-light: #90caf9;
-    --blue-medium: #42a5f5;
-    --blue-dark: #1976d2;
-  }
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #0d47a1;
 }
-    --blue-dark: #1976d2;
-  }
+
+.card .meta {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+/* -------------------------------- */
+/* CONTACT SECTION                  */
+/* -------------------------------- */
+
+.contact-list li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.contact-list a {
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* -------------------------------- */
+/* RESUME PAGE                      */
+/* -------------------------------- */
+
+.btn--wide {
+  padding: 12px 34px;
+  background: #1e88e5;
+  color: white;
+  border-radius: 28px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.btn--wide:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+}
+
+
+/* -------------------------------- */
+/* FOOTER                           */
+/* -------------------------------- */
+
+.site-footer {
+  padding: 20px 0;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  border-top: 1px solid #eee;
 }
