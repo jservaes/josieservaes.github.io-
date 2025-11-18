@@ -6,35 +6,72 @@
   <title>Projects — Josie Servaes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <!-- same header as above -->
-  <header class="site-header">
-    <div class="container nav">
-      <div class="brand">Josie Servaes</div>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="index.html#about">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a class="btn btn--small" href="index.html#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="grid">
-          <!-- paste all your <article class="card">...</article> blocks here -->
-        </div>
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">Josie Servaes</div>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a class="contact-btn" href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="grid">
+      <!-- PASTE ALL ORIGINAL PROJECT CARDS EXACTLY -->
+      <div class="info-card">
+        <h3>Payroll Automation</h3>
+        <p>Python tool that pulls timesheets via API, applies pay rules (OT/holidays/rates), and exports payroll-ready reports.
+           Added a one-click GUI so anyone can run it.</p>
+        <p class="meta"><strong>Tech:</strong> Python, REST APIs, Excel</p>
       </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Josie Servaes</p>
+      <div class="info-card">
+        <h3>Database Cleaner</h3>
+        <p>Audited & mapped Salesforce data, removed redundancy, and aligned structures to support Conga form automation.</p>
+        <p class="meta"><strong>Tech:</strong> Salesforce, Excel, Conga</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Spanish Language Learning Chatbot</h3>
+        <p>Final project for my AI course…</p>
+        <p class="meta"><strong>Tech:</strong> Python, Pandas</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Assignment Tracker Web App</h3>
+        <p>Currently working on…</p>
+        <p class="meta"><strong>Tech:</strong> C++, Web Development</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Redesign of Website for Elder Resource Benefits Consulting</h3>
+        <p>I am redesigning…</p>
+        <p class="meta"><strong>Tech:</strong> Python, Web Development</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Stock Returns Prediction Web App</h3>
+        <p>School project at UC3M…</p>
+        <p class="meta"><strong>Tech:</strong> Machine Learning, Web Scraping, Python</p>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Josie Servaes</p>
+  </div>
+</footer>
+
 </body>
 </html>
