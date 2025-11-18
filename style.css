@@ -308,3 +308,42 @@ ul {
   color: #555;
   border-top: 1px solid #eee;
 }
+/* PAGE TITLES */
+.page-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #111;
+}
+
+/* PAGE SECTION SPACING */
+.page-section {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* RESUME VIEWER */
+.resume-viewer {
+  width: 100%;
+  height: 90vh;
+  border: none;
+  margin-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* HEADER BUTTON MATCHING HOMEPAGE */
+.btn-header {
+  background: #d4b037;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: black !important;
+  font-weight: 600;
+}
+
