@@ -4,46 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Resume — Josie Servaes</title>
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <header class="site-header">
-    <div class="container nav">
-      <div class="brand">Josie Servaes</div>
-      <nav class="nav-links">
-        <a href="index.html">About</a>
-        <a href="projects.html">Projects</a>
-        <span class="current">Resume</span>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">Josie Servaes</div>
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html" class="active">Resume</a>
+      <a class="btn-header" href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="resume-page">
-    <div class="container resume-container">
-      <h1 class="resume-title">Resume</h1>
+<main class="container page-section">
 
-      <a class="btn" href="resume_2025.docx.pdf" download>Download PDF</a>
+  <h1 class="page-title">Resume</h1>
 
-      <iframe 
-        src="resume_2025.docx.pdf"
-        class="resume-frame"
-        title="Josie Servaes Resume"
-      ></iframe>
-    </div>
-  </main>
+  <a class="btn" href="resume_2025.docx.pdf" download>Download PDF</a>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Josie Servaes</p>
-    </div>
-  </footer>
+  <iframe 
+    class="resume-viewer"
+    src="resume_2025.docx.pdf">
+  </iframe>
 
-</body>
-</html>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2025 Josie Servaes</p>
+  </div>
+</footer>
 
 </body>
 </html>
-
