@@ -3,6 +3,9 @@
   --blue-medium: #1e88e5;
   --blue-dark: #1565c0;
 
+  /* changed "gold" intention -> use a black accent */
+  --accent: #000;
+
   --bg: #ffffff;
   --fg: #111;
   --muted: #555;
@@ -36,9 +39,10 @@ a:hover { color: var(--blue-medium); text-decoration: underline; }
 }
 
 /* Header */
+/* incorporate the top blue into the header so the "same blue on top" is visible */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,0.9);
+  background: linear-gradient(180deg, rgba(30,136,229,0.12), rgba(255,255,255,0.92));
   backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -46,7 +50,10 @@ a:hover { color: var(--blue-medium); text-decoration: underline; }
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 0;
 }
-.brand { font-weight: 800; letter-spacing: .2px; }
+.brand {
+  font-weight: 800; letter-spacing: .2px;
+  color: var(--accent); /* changed "gold" to black accent for brand */
+}
 .nav-links { display: flex; align-items: center; gap: 16px; }
 .nav-links a { font-weight: 600; }
 
@@ -73,35 +80,62 @@ a:hover { color: var(--blue-medium); text-decoration: underline; }
 .hero-blob {
   position: relative;
   width: 100%;
-  min-height: 400px;
+  min-height: 520px; /* give a bit more vertical space so the name sits nicely inside the blob */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
+/* Make sure the canvas stays behind content and does not capture pointer events */
 #blobCanvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  /* subtle blur so the blue blob feels soft behind the name */
+  filter: blur(0.6px);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 10;
+  position: absolute; /* fill the blob area so content is centered inside the blob */
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 40px 20px;
+  pointer-events: none; /* ensures clicks fall through if needed; set pointer-events:auto on interactive items inside */
 }
 
+/* The name must be inside the blue blob, centered and large */
 .hero-name {
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(3.2rem, 9vw, 6rem); /* larger by default */
   font-weight: 900;
-  color: var(--blue-dark);
+  color: #fff; /* white on blue blob for good contrast */
   margin: 0;
-  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
   letter-spacing: -1px;
+  line-height: 1;
+  padding: 20px 36px;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(30,136,229,0.28), rgba(21,101,192,0.18) 50%, transparent 70%);
+  text-shadow: 0 6px 18px rgba(4, 25, 55, 0.35);
+  box-shadow: 0 8px 30px rgba(30,136,229,0.12);
+  display: inline-block;
+  pointer-events: auto;
+}
+
+/* If you want a smaller subheading inside the blob */
+.hero-sub {
+  margin-top: 8px;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+  font-size: 1rem;
+  pointer-events: auto;
 }
 
 /* Sections */
@@ -148,13 +182,16 @@ section { padding: 48px 0; }
   .nav-links { gap: 10px; }
   .btn--small { font-size: 0.9rem; padding: 7px 10px; }
   .card { padding: 16px; }
-  .hero-name { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero-name { font-size: clamp(2.2rem, 10vw, 3.2rem); padding: 14px 22px; }
 }
 
 @media (max-width: 600px) {
   :root {
     --blue-light: #90caf9;
     --blue-medium: #42a5f5;
+    --blue-dark: #1976d2;
+  }
+}
     --blue-dark: #1976d2;
   }
 }
