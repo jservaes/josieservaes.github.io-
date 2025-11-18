@@ -346,4 +346,70 @@ ul {
   color: black !important;
   font-weight: 600;
 }
+/* ---------------- HERO SECTION ---------------- */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 75vh;
+  padding: 6rem 0;
+}
+
+.hero-inner {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.hero-about {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: #333;
+  max-width: 550px;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Buttons */
+.btn {
+  background: #d4b037;
+  padding: 0.75rem 1.6rem;
+  border-radius: 2rem;
+  color: #111 !important;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.btn-outline {
+  border: 2px solid #111;
+  padding: 0.65rem 1.6rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  color: #111 !important;
+}
+
+/* Beige right-side block */
+.hero-accent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 35%;
+  background: #f3eee7;
+  z-index: 1;
+}
 
