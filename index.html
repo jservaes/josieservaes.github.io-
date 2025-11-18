@@ -4,103 +4,92 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Josie Servaes — Software Development</title>
-  <meta name="theme-color" content="#1e88e5" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <div class="brand">Josie Servaes</div>
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links">
         <a href="#about">About</a>
         <a href="projects.html">Projects</a>
         <a href="resume.html">Resume</a>
-        <a class="btn btn--small" href="#contact">Contact</a>
+        <a class="contact-btn" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="hero-title">Hello</h1>
+      <p class="hero-sub">Here’s who I am & what I do</p>
 
-    <!-- HERO -->
-    <section class="hero-blob">
-      <canvas id="blobCanvas"></canvas>
-      <div class="hero-content">
-        <h1 class="hero-name">Josie Servaes</h1>
-        <p class="hero-tagline">Aspiring Software Developer</p>
-
-        <div class="hero-buttons">
-          <a href="resume.html" class="hero-btn primary">Resume</a>
-          <a href="projects.html" class="hero-btn secondary">Projects</a>
-        </div>
+      <div class="hero-buttons">
+        <a href="resume.html" class="btn gold">Resume</a>
+        <a href="projects.html" class="btn outline-dark">Projects</a>
       </div>
-    </section>
+    </div>
 
-    <!-- ABOUT -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>About Me</h3>
-            <p>
-              Hi! I'm Josie Servaes, a computer science major at the University of
-              Massachusetts Amherst. I’m motivated by understanding how things work
-              and finding ways to make them better. I aim to bring out of the box
-              thinking, focus, and positive energy to everything I work on,computer
-              science or not!
-            </p>
-          </article>
-        </div>
+    <div class="hero-right"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+
+      <div class="info-card">
+        <h3>About Me</h3>
+        <p>
+          Hi! I'm Josie Servaes, a computer science major at the University of
+          Massachusetts Amherst. I’m motivated by understanding how things work
+          and finding ways to make them better. I aim to bring out of the box
+          thinking, focus, and positive energy to everything I work on, computer
+          science or not!
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- WORK EXPERIENCE -->
-    <section id="work" class="work">
-      <div class="container">
-        <h2 class="section-title">Relevant Work Experience</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Software Engineer Intern at Hoverlay</h3>
-            <p>
-              Worked closely with the CEO and product team to understand business goals,
-              translate non-technical needs into engineering tasks, and present work
-              clearly. Strengthened collaboration, adaptability, and problem-solving skills
-              in a fast-moving startup environment.
-            </p>
-            <p class="meta"><strong>Skills:</strong> Collaboration, Problem Solving, Communication</p>
-          </article>
-        </div>
+  <!-- WORK EXPERIENCE -->
+  <section id="work" class="section">
+    <div class="container">
+      <h2 class="section-title">Relevant Work Experience</h2>
+
+      <div class="info-card">
+        <h3>Software Engineer Intern at Hoverlay</h3>
+        <p>
+          Worked closely with the CEO and product team to understand business
+          goals, translate non-technical needs into engineering tasks, and present
+          work clearly. Strengthened collaboration, adaptability, and problem solving
+          skills in a fast moving startup environment.
+        </p>
+        <p class="meta"><strong>Skills:</strong> Collaboration, Problem Solving, Communication</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <ul class="contact-list">
-          <li>Email: <a href="mailto:josephineservaes@gmail.com">josephineservaes@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/josephine-servaes-71317829b/" target="_blank" rel="noopener">LinkedIn</a></li>
-        </ul>
-      </div>
-    </section>
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:josephineservaes@gmail.com">josephineservaes@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/josephine-servaes-71317829b/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </section>
 
-  </main>
-
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 Josie Servaes</p>
     </div>
   </footer>
 
-  <!-- BLOB SCRIPT (unchanged) -->
-  <script>
-    /* your full canvas blob script here — unchanged */
-  </script>
 </body>
 </html>
+
