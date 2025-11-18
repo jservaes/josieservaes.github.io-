@@ -6,7 +6,7 @@
   <title>Josie Servaes — Software Development</title>
 
   <!-- Meta -->
-  <meta name="theme-color" content="#a68b4a" />
+  <meta name="theme-color" content="#1e88e5" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
@@ -20,23 +20,17 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#case-study">Payroll Case Study</a>
         <a class="btn btn--small" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <p class="kicker">Everything Computer Science</p>
-          Python + simple UIs for real business workflows: payroll, data cleanup, form automation, and review pipelines.
-        </p>
-        <div class="cta">
-          <a class="btn" href="#case-study">View Payroll Case Study</a>
-          <a class="btn btn--ghost" href="#projects">See Projects</a>
-        </div>
+    <!-- HERO WITH INTERACTIVE BLOB -->
+    <section class="hero-blob">
+      <canvas id="blobCanvas"></canvas>
+      <div class="hero-content">
+        <h1 class="hero-name">Josie Servaes</h1>
       </div>
     </section>
 
@@ -65,7 +59,6 @@
               Added a one-click GUI so anyone can run it. 
             </p>
             <p class="meta"><strong>Tech:</strong> Python, REST APIs, Excel</p>
-            <a class="card-cta" href="#case-study" aria-label="Read the payroll automation case study">Read case study →</a>
           </article>
 
           <article class="card">
@@ -101,61 +94,6 @@
       </div>
     </section>
 
-    <!-- CASE STUDY (SAFE) -->
-    <section id="case-study" class="case-study">
-      <div class="container">
-        <h2 class="section-title">Payroll Automation — Case Study (Safe Demo)</h2>
-
-        <div class="cs-grid">
-          <div class="cs-text">
-            <h3>Problem</h3>
-            <p>
-              Payroll prep involved manual copy/paste from time tracking, rate lookups, and special-case rules. It was slow and error-prone.
-            </p>
-
-            <h3>Solution</h3>
-            <ul>
-              <li>Pull timesheets from a time-tracking API.</li>
-              <li>Apply rules for OT/holidays/differential rates.</li>
-              <li>Export payroll-ready CSV/Excel with audit log.</li>
-              <li>One-click GUI for non-technical users.</li>
-            </ul>
-
-            <h3>Results</h3>
-            <ul>
-              <li>~80–90% time saved per run.</li>
-              <li>Fewer corrections; repeatable & auditable.</li>
-            </ul>
-
-            <h3>Tech</h3>
-            <p>Python, Flask, Pandas, REST APIs, CSV/Excel.</p>
-
-            <div class="cta">
-              <!-- These are placeholders. Replace with your files when ready. -->
-              <a class="btn" href="#" aria-disabled="true">2-min Demo (synthetic data)</a>
-              <a class="btn btn--ghost" href="#" aria-disabled="true">Download Sample CSV</a>
-            </div>
-          </div>
-
-          <!-- Redacted / synthetic visuals (placeholders) -->
-          <div class="cs-visuals">
-            <figure class="placeholder">
-              <div class="placeholder__label">Redacted Screenshot</div>
-              <figcaption>Import timesheets → validate → apply rules → export</figcaption>
-            </figure>
-            <figure class="placeholder">
-              <div class="placeholder__label">Architecture Diagram</div>
-              <figcaption>API → ETL → Rules Engine → GUI → CSV</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <p class="disclaimer">
-          This page uses <em>synthetic data</em> and redacted visuals. No client names, no real employees, no sensitive fields.
-        </p>
-      </div>
-    </section>
-
     <!-- RESUME -->
     <section id="resume" class="resume">
       <div class="container">
@@ -181,6 +119,116 @@
       <p>© 2025 Josie Servaes</p>
     </div>
   </footer>
+
+  <script>
+    // Interactive Ocean Blob Animation
+    const canvas = document.getElementById('blobCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas size
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = Math.min(window.innerHeight * 0.6, 500);
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    // Mouse position
+    let mouseX = canvas.width / 2;
+    let mouseY = canvas.height / 2;
+    
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+    
+    // Blob particles with ocean colors
+    class Blob {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 80 + 40;
+        this.color = this.randomOceanColor();
+      }
+      
+      randomOceanColor() {
+        const colors = [
+          'rgba(30, 136, 229, 0.3)',   // Ocean blue
+          'rgba(66, 165, 245, 0.3)',   // Light blue
+          'rgba(25, 118, 210, 0.3)',   // Deep blue
+          'rgba(33, 150, 243, 0.35)',  // Sky blue
+          'rgba(41, 182, 246, 0.25)',  // Cyan blue
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+      
+      update() {
+        // Move towards mouse slightly
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 200) {
+          this.vx += dx * 0.00003;
+          this.vy += dy * 0.00003;
+        }
+        
+        // Apply velocity
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        // Friction
+        this.vx *= 0.99;
+        this.vy *= 0.99;
+        
+        // Bounce off edges
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        
+        // Keep within bounds
+        this.x = Math.max(0, Math.min(canvas.width, this.x));
+        this.y = Math.max(0, Math.min(canvas.height, this.y));
+      }
+      
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    // Create blobs
+    const blobs = [];
+    for (let i = 0; i < 8; i++) {
+      blobs.push(new Blob());
+    }
+    
+    // Animation loop
+    function animate() {
+      // Clear with gradient background
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, '#e3f2fd');
+      gradient.addColorStop(1, '#bbdefb');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Update and draw blobs
+      ctx.filter = 'blur(40px)';
+      blobs.forEach(blob => {
+        blob.update();
+        blob.draw();
+      });
+      ctx.filter = 'none';
+      
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
+  </script>
 </body>
 </html>
 
