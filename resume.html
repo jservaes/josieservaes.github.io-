@@ -6,39 +6,47 @@
   <title>Resume — Josie Servaes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <div class="brand">Josie Servaes</div>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="index.html">About</a>
-      <a href="work.html">Projects and Experience</a>
-      <a href="resume.html">Resume</a>
-      <a class="contact-btn" href="mailto:josephineservaes@gmail.com">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER (same as other pages) -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">Josie Servaes</div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">About</a>
+        <a href="work.html">Projects and Experience</a>
+        <a href="resume.html">Resume</a>
+        <a class="contact-btn" href="mailto:josephineservaes@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<main class="container page-section">
+  <!-- RESUME SECTION -->
+  <main class="resume-page">
+    <div class="resume-container">
+      <h1 class="resume-heading">Resume</h1>
 
-  <h1 class="page-title">Resume</h1>
+      <div class="resume-actions">
+        <a href="resume_2025.docx.pdf" class="btn gold btn-wide" download>
+          Download PDF
+        </a>
+      </div>
 
-  <a class="btn" href="resume_2025.docx.pdf" download>Download PDF</a>
+      <!-- BIG EMBEDDED PDF -->
+      <iframe
+        src="resume_2025.docx.pdf"
+        class="resume-frame"
+        title="Josie Servaes Resume"
+      ></iframe>
+    </div>
+  </main>
 
-  <iframe 
-    class="resume-viewer"
-    src="resume_2025.docx.pdf">
-  </iframe>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2025 Josie Servaes</p>
-  </div>
-</footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Josie Servaes</p>
+    </div>
+  </footer>
 
 </body>
 </html>
