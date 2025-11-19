@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume — Josie Servaes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER (same as other pages, but pointing to cv.html) -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">Josie Servaes</div>
+      <nav class="nav-links">
+        <a href="index.html">About</a>
+        <a href="work.html">Projects and Experience</a>
+        <a href="cv.html" class="active">Resume</a>
+        <a class="contact-btn" href="mailto:josephineservaes@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BIG RESUME VIEWER -->
+  <main class="resume-page">
+    <div class="resume-container">
+      <h1 class="resume-heading">Resume</h1>
+
+      <div class="resume-actions">
+        <a href="resume_2025.docx.pdf"
+           class="btn gold btn-wide"
+           download>
+          Download PDF
+        </a>
+      </div>
+
+      <iframe
+        src="resume_2025.docx.pdf#toolbar=1&zoom=page-width"
+        title="Josie Servaes Resume"
+        style="
+          display: block;
+          width: 100%;
+          height: 95vh;
+          border: none;
+          border-radius: 14px;
+          box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+        "
+      ></iframe>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Josie Servaes</p>
+    </div>
+  </footer>
+
+</body>
+</html>
